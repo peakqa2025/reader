@@ -2,12 +2,10 @@ name: Run Tests
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
-    branches:
-      - master
-  workflow_call: # Triggers on a workflow_call event
+    branches: [master]
+  workflow_call:
   workflow_dispatch:
 
 jobs:
@@ -31,4 +29,5 @@ jobs:
           python -m pip install .[dev]
 
       - name: Run Pytest
-        run: pytest
+        run: |
+          pytest
