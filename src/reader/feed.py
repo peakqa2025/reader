@@ -1,6 +1,5 @@
 """Interact with the Real Python feed."""
 # Standard library imports
-from typing import Dict, List
 
 # Third party imports
 import feedparser
@@ -9,7 +8,7 @@ import html2text
 # Reader imports
 from reader import URL
 
-_CACHED_FEEDS: Dict[str, feedparser.FeedParserDict] = {}
+_CACHED_FEEDS: dict[str, feedparser.FeedParserDict] = {}
 
 
 def _feed(url: str = URL) -> feedparser.FeedParserDict:
@@ -58,7 +57,7 @@ def get_article(article_id: str, links: bool = False, url: str = URL) -> str:
     return f"# {article.title}\n\n{text}"
 
 
-def get_titles(url: str = URL) -> List[str]:
+def get_titles(url: str = URL) -> list[str]:
     """List titles in feed."""
     articles = _feed(url).entries
     return [a.title for a in articles]
