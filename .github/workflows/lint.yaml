@@ -7,7 +7,7 @@ on:
   push:
     branches: # Triggers on a push to the master branch
       - master
-      - github-actions-tutorial
+#      - github-actions-tutorial
   workflow_dispatch:
 
 jobs:
